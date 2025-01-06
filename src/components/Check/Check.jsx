@@ -13,9 +13,9 @@ const Check = () => {
 
       <select class="form-control" required>
         <option value="">NATIONALITY</option>
-        <option value="American">American</option>
-        <option value="British">British</option>
-        <option value="Canadian">Canadian</option>
+        <option value="Sri Lankan">Sri Lankan</option>
+        <option value="Foreign">Foreign</option>
+       
         
       </select>
 

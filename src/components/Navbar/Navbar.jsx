@@ -5,7 +5,10 @@ import logo from '../../assets/logo.png'
 const Navbar = () => {
   return (
     <nav className='container'>
-        <img src={logo} alt="cv" className='logo'/>
+      <div>
+          <img src={logo} alt="cv" className='logo'/>
+      </div>
+        
         <ul>
             <li>Home</li>
             <li>Accomodation</li>
