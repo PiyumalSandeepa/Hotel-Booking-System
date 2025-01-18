@@ -1,17 +1,23 @@
 import React from 'react'
 import{BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar'
-import Hero from './components/Hero/Hero'
-import Check from './components/Check/Check'
-import Intro from './Pages/Home/Intro'
 import Home from './Pages/Home/Home';
+import Footer from './components/Footer/Footer';
+import Book from './Pages/Book/Book';
+import RoomCard from './Pages/SelectRoom/RoomCard';
+import Card from './Pages/SelectRoom/Card';
+
 
 const App = () => {
   return (
     <Router>
-    <Routes>
-        <Route path="/" element={<Home />} />
-    </Routes>
+    <Navbar/>
+      <Routes>        
+        <Route path="/" element={<Home />} />  
+        <Route path="/book" element={<Book />} />   
+        <Route path="/roomcard" element={<Card/>} />   
+      </Routes>
+    <Footer/>
    </Router>
   )
 }

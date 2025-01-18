@@ -1,192 +1,95 @@
-/*
-.navbar {
-    
-    background-color: #33333327;
-    color: white;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s;
-  }
-  
-  .navbar.scrolled {
-    background-color: #515151; /* Darker background when scrolling 
-  }
-  
-
- .navbar-logo img{
-    height: 100px;
-    width: 100px;
- } 
-  
-  /* Navbar Links 
-  .navbar-links {
-    
-    display: flex;
-    justify-content: flex-end;
-    align-items: start;
-    gap: 20px;
-    list-style-type: none;
-  }
-  
-  .navbar-links Link {
-    color: rgb(228, 228, 228);
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px;
-    transition: color 0.3s;
-  }
-  
-  .navbar-links Link:hover {
-    color: #34b6e1; /* Highlight color on hover 
-  }
-  
-  /* Navbar "BOOK NOW" button 
-  .bookbtn {
-    background-color: #34b6e1;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .bookbtn:hover {
-    background-color: #1c78b9;
-  }
-  
-  /* Navbar Toggle (Hamburger Menu) 
-  .navbar-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  /* For mobile and smaller screens 
-  @media (max-width: 500px) {
-    .navbar-links {
-      display: none; /* Hide the links by default 
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
-      background-color: #dad4d4;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      padding: 20px;
-    }
-  
-    .navbar-links.open {
-      display: flex; /* Show the links when the menu is open 
-    }
-  
-    .navbar-toggle {
-      display: block;
-      color: white;
-    }
-  }*/
-
-  /* General Styles */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px ;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: transparent; /* Default background */
-    color: white;
-  }
+  color: rgb(255, 255, 255);
+}
+
+.navbar.scrolled {
+  background-color: #514f4f; /* Background when scrolled */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.111); /* Optional shadow */
+}
+
+.navbar-logo img {
+  width: 120px; /* Adjust logo size */
+  height: auto;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 80px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 8px 0;
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.navbar-links a:hover::after {
+  width: 100%; /* Underline animation on hover */
+}
+
+.navbar-bookbtn {
+  background-color: #33b5e1;
+  color: #ffffff;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
   
-  .navbar.scrolled {
-    background-color: #514f4f; /* Background when scrolled */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.111); /* Optional shadow */
-  }
-  
-  .navbar-logo img {
-    width: 120px; /* Adjust logo size */
-    height: auto;
-  }
-  
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.navbar-bookbtn:hover {
+  background-color: #1c78b9;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 500x) {
   .navbar-links {
-    display: flex;
-    list-style: none;
-    gap: 80px;
-    margin: 0;
-    padding: 0;
+    display: none; /* Hide links on mobile */
   }
-  
-  .navbar-links li {
-    position: relative;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-    padding: 0.5rem 0;
-    position: relative;
-  }
-  
-  .navbar-links a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  
-  .navbar-links a:hover::after {
-    width: 100%; /* Underline animation on hover */
-  }
-  
+
   .navbar-bookbtn {
-    background-color: #33b5e1;
-    color: #ffffff;
-    padding: 8px 24px;
-    border: none;
-    border-radius: 20px;
     font-size: 14px;
-    
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background-color 0.3s, transform 0.2s;
   }
-  
-  .navbar-bookbtn:hover {
-    background-color: #1c78b9;
-    transform: scale(1.05);
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 500x) {
-    .navbar-links {
-      display: none; /* Hide links on mobile */
-    }
-  
-    .navbar-bookbtn {
-      font-size: 14px;
-    }
-  }
-  
-
-  
-
+}
