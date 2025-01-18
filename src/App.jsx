@@ -5,7 +5,7 @@ import Home from './Pages/Home/Home';
 import Footer from './components/Footer/Footer';
 import Book from './Pages/Book/Book';
 import RoomCard from './Pages/SelectRoom/RoomCard';
-import Card from './Pages/SelectRoom/Card';
+import Card from './Pages/SelectRoom/RoomList';
 
 
 const App = () => {
