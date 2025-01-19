@@ -1,11 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // If you're using React Router
+//import { Link } from "react-router-dom"; // If you're using React Router
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/logo1.png"; // Replace with your logo path
 
-function Navbar() {
+const Navbar =() => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation(); // Get the current location
+  const [bgColor, setBgColor] = useState("transparent");
 
+  // Handle background color based on the current pathname
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/home":
+        setBgColor("blue");
+        break;
+      case "/roomcard":
+        setBgColor("green");
+        break;
+      case "/contact":
+        setBgColor("purple");
+        break;
+      default:
+        setBgColor("gray");
+        break;
+    }
+  }, [location.pathname]); 
   // Change background color on scroll
   const handleScroll = () => {
     if (window.scrollY > 50) {

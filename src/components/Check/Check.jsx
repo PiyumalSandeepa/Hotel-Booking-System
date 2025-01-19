@@ -1,5 +1,6 @@
 import React from 'react'
 import './Check.css'
+import { Link } from 'react-router-dom';
 
 const Check = () => {
   return (
@@ -20,13 +21,14 @@ const Check = () => {
       </select>
 
       <input type="text" class="form-control" placeholder="Promo Code" />
-
+    <Link to="/roomcard">
       <button type="submit" class="btn-submit">BOOK NOW</button>
+    </Link>
         </form>
 
 
     </che>
-  )
-}
+  );
+};
 
-export default Check
+export default Check;

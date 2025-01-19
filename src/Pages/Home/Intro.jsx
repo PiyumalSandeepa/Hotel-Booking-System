@@ -2,7 +2,7 @@ import React from "react";
 import "./Intro.css";
 import intro1 from "../../assets/pool.jpg";
 import intro2 from "../../assets/bedroom.jpg";
-import logo1 from "../../assets/logo1.png";
+
 
 const Intro = () => {
   return (
