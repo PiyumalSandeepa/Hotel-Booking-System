@@ -1,13 +1,16 @@
 
 .footer {
     background: linear-gradient(rgba(8,0,58,0.7),rgba(8,0,58,0.7)), url('../../assets/footer.jpg');
-    background-size: cover;    
+    background-position: center;
+    background-size: cover; 
+    height: 600px;   
     color: #ffffffff;
     padding: 32px 16px;
     font-family: Arial, sans-serif;
   }
   
   .footer-container {
+    margin-top: 100px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

@@ -24,7 +24,7 @@ const Check = () => {
     <Link to="/roomcard">
       <button type="submit" class="btn-submit">BOOK NOW</button>
     </Link>
-        </form>
+        </form> 
 
 
     </che>

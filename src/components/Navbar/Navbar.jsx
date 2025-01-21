@@ -6,27 +6,6 @@ import logo from "../../assets/logo1.png"; // Replace with your logo path
 
 const Navbar =() => {
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation(); // Get the current location
-  const [bgColor, setBgColor] = useState("transparent");
-
-  // Handle background color based on the current pathname
-  useEffect(() => {
-    switch (location.pathname) {
-      case "/home":
-        setBgColor("blue");
-        break;
-      case "/roomcard":
-        setBgColor("green");
-        break;
-      case "/contact":
-        setBgColor("purple");
-        break;
-      default:
-        setBgColor("gray");
-        break;
-    }
-  }, [location.pathname]); 
-  // Change background color on scroll
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -43,7 +22,9 @@ const Navbar =() => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}
+    
+    >
       <div className="navbar-logo">
         <img src={logo} alt="The Blue Water" />
       </div>
@@ -52,7 +33,7 @@ const Navbar =() => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="#accommodation">Accommodation</Link>
+          <Link to="/accommodation">Accommodation</Link>
         </li>
         <li>
           <Link to="#dining">Dining</Link>
@@ -74,3 +55,4 @@ const Navbar =() => {
 }
 
 export default Navbar;
+

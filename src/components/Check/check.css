@@ -10,10 +10,6 @@
     width: 100%;
     max-width: 80%;
 }
-
-  
-
-  
   .booking-form {
     display: flex;
     gap: 10px;
@@ -34,7 +30,7 @@
   }
   
   .btn-submit {
-    background-color: #34b6e1;
+    background-color: #33b5e1;
     color: white;
     border: none;
     border-radius: 5px;
