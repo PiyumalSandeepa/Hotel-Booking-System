@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './Pages/Home/Home';
 import Footer from './components/Footer/Footer';
 import Book from './Pages/Book/Book';
-import RoomCard from './Pages/SelectRoom/RoomCard';
+
 import Card from './Pages/SelectRoom/RoomList';
 import RoomList from './Pages/SelectRoom/RoomList';
 import Accommodation from './Pages/Accommodation/Accommodation';

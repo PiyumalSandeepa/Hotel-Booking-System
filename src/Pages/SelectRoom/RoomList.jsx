@@ -1,9 +1,10 @@
 import React from 'react';
-import RoomCard from './RoomCard'; // Import RoomCard component
+
 import './roomlist.css'
 import deluxecard1 from '../../assets/deluxecard1.jpg';
 import standardcard1 from '../../assets/standardcard1.jpg';
 import familycard1 from '../../assets/familycard1.jpg';
+import RoomCard from '../../components/RoomCard/RoomCard';
 function RoomList() {
   // Sample room data
   const rooms = [
@@ -34,6 +35,8 @@ function RoomList() {
     <div className="room-list">
       {rooms.map((room, index) => (
         <RoomCard key={index} room={room} />
+
+      
       ))}
     </div>
   );

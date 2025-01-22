@@ -15,7 +15,7 @@ body {
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .navbar.scrolled {

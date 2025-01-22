@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../components/RoomCard/roomcard.css'; // Importing CSS for card styling
+import './roomcard.css'; // Importing CSS for card styling
 
 function RoomCard({ room }) {
   return (

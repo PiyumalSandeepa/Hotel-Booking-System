@@ -21,7 +21,7 @@ const Check = () => {
       </select>
 
       <input type="text" class="form-control" placeholder="Promo Code" />
-    <Link to="/roomcard">
+    <Link to="/roomlist">
       <button type="submit" class="btn-submit">BOOK NOW</button>
     </Link>
         </form> 
