@@ -8,6 +8,8 @@ import Book from './Pages/Book/Book';
 import Card from './Pages/SelectRoom/RoomList';
 import RoomList from './Pages/SelectRoom/RoomList';
 import Accommodation from './Pages/Accommodation/Accommodation';
+import Login from './Pages/Login/Login';
+import Signup from './Pages/Signup/Signup';
 
 
 
@@ -19,6 +21,8 @@ const App = () => (
       <Route path="/book" element={<Book />} />
       <Route path="/roomlist" element={<RoomList />} />
       <Route path="/accommodation" element={<Accommodation />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
     <Footer />
   </Router>
