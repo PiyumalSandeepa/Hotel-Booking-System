@@ -3,21 +3,9 @@ import './Hero.css'
 
 const Hero = () => {
   return (
-    <div className='hero'>
-      <div className='hero-text'>        
-      </div>
-    </div>
+    <div className='hero'></div>
   )
 }
 
-export default Hero
-
-
-Hero.js
-
-
-
-
-
-
+export default Hero;
 

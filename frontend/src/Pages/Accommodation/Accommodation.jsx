@@ -7,12 +7,11 @@ import standardcard1 from '../../assets/standardcard1.jpg';
 import familycard1 from '../../assets/familycard1.jpg';
 
 function Accommodation() {
-    <div className='Hero'>
-        
-    </div>
+  
   // Sample room data
   const rooms = [
     {
+      
       name: 'Deluxe Suite',
       description: 'A spacious suite with a king-size bed and a stunning city view.',
       price: 200,
@@ -87,5 +86,6 @@ function Accommodation() {
     </div>
   );
 }
+
 
 export default Accommodation;

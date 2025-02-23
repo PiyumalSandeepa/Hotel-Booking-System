@@ -25,4 +25,13 @@
       grid-template-columns: 1fr; /* 1 card per row for mobile screens */
     }
   }
-  
+
+   
+.hero{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(79, 68, 150, 0.7),rgba(4, 3, 12, 0.7)), url('../../assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
