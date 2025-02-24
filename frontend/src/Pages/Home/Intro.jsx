@@ -2,17 +2,21 @@ import React from "react";
 import "./Intro.css";
 import intro1 from "../../assets/pool.jpg";
 import intro2 from "../../assets/bedroom.jpg";
-
+import gallery1 from "../../assets/gallery1.jpg";
+import gallery2 from "../../assets/gallery2.jpg";
+import gallery3 from "../../assets/gallery3.jpg";
+import gallery4 from "../../assets/gallery4.jpg";
 
 const Intro = () => {
   return (
+    <>
     <div className="container">
       <div className="content">
           <div className="image-section2">
             <img src={intro2} alt="Image of Bedroom" />
           </div>
         <div className="text-section">
-          <div className="Text1">Where Luxury Meets Nature...</div>
+          <div className="Text1"><h1>Where Luxury Meets Nature...</h1></div>
           <h2>Experience Unparalleled Relaxation at Blue Sapphire</h2>
           
 
@@ -27,8 +31,28 @@ const Intro = () => {
         <div className="image-section1">
           <img src={intro1} alt="Image of Pool With Palm trees" />
         </div>
+
+        
       </div>
     </div>
+
+    <div className="container2">
+      <div className="content2">
+        <div className="Text1">
+          <h1>GALLERY</h1>
+        </div>
+        <div className="gallerylist">
+          <img src={gallery1} alt="Image of Dining Room"></img>
+          <img src={gallery2} alt="Image of Dining Room"></img>
+          <img src={gallery3} alt="Image of Dining Room"></img>
+          <img src={gallery4} alt="Image of Dining Room"></img>
+        </div>
+        
+
+
+      </div>
+    </div>
+    </>
   );
 };
 
