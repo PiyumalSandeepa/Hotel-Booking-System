@@ -1,6 +1,6 @@
 import React from 'react';
 import './roomcard.css'; // Importing CSS for card styling
-
+import { Link, useLocation } from "react-router-dom";
 function RoomCard({ room }) {
   return (
     <div className="room-card">
@@ -15,7 +15,9 @@ function RoomCard({ room }) {
         </ul>
         <div className="room-card-footer">
           <span className="room-price">${room.price} per night</span>
+          <Link to="/reserve">
           <button className="book-button">Book Now</button>
+          </Link>
         </div>
       </div>
     </div>
