@@ -1,0 +1,62 @@
+.booking-container-reserve {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .room-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .check-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .section-label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .input-field, .select-field, .text-area {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .text-area {
+    height: 80px;
+  }
+  
+  .toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .phone-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .flag {
+    background: #f3f3f3;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
