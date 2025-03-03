@@ -1,33 +1,33 @@
-import React from 'react'
-import './Check.css'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Check.css';
 
 const Check = () => {
+  const [checkIn, setCheckIn] = useState('');
+  const [checkOut, setCheckOut] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    localStorage.setItem('checkIn', checkIn);
+    localStorage.setItem('checkOut', checkOut);
+
+    navigate('/roomlist'); // ✅ Redirect to RoomList
+  };
+
   return (
-    <che class="booking-container">
-        <form class="booking-form">
-        
-      <label>Check-In Date</label> 
-      <input type="date" class="form-control" required />
-      <label>Check-Out Date</label> 
-      <input type="date" class="form-control" required />
+    <div className="booking-container">
+      <form className="booking-form" onSubmit={handleSubmit}>
+        <label>Check-In Date</label> 
+        <input type="date" className="form-control" required value={checkIn} onChange={(e) => setCheckIn(e.target.value)} />
 
-      <select class="form-control" required>
-        <option value="">NATIONALITY</option>
-        <option value="Sri Lankan">Sri Lankan</option>
-        <option value="Foreign">Foreign</option>
-       
-        
-      </select>
+        <label>Check-Out Date</label> 
+        <input type="date" className="form-control" required value={checkOut} onChange={(e) => setCheckOut(e.target.value)} />
 
-      <input type="text" class="form-control" placeholder="Promo Code" />
-    <Link to="/roomlist">
-      <button type="submit" class="btn-submit">BOOK NOW</button>
-    </Link>
-        </form> 
-
-
-    </che>
+        <button type="submit" className="btn-submit">BOOK NOW</button>
+      </form>
+    </div>
   );
 };
 

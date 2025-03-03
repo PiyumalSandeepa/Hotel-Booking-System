@@ -1,33 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import RoomCard from './RoomCard';
+import React, { useState, useEffect } from 'react';
+import './roomlist.css';
+import RoomCard from '../../components/RoomCard/RoomCard';
 
 function RoomList() {
   const [rooms, setRooms] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/roomlist')
-      .then((response) => response.json())
-      .then((data) => {
+    const checkIn = localStorage.getItem('checkIn');
+    const checkOut = localStorage.getItem('checkOut');
+
+    fetch('http://localhost:5000/available-rooms', { // ✅ Corrected endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ check_in: checkIn, check_out: checkOut })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Available Rooms:", data); // Debugging
         setRooms(data);
         setLoading(false);
       })
-      .catch((error) => {
-        console.error('Error fetching room data:', error);
-        setError('Failed to load room data.');
+      .catch(error => {
+        console.error('Error fetching available rooms:', error);
         setLoading(false);
       });
   }, []);
 
-  if (loading) return <p>Loading rooms...</p>;
-  if (error) return <p>{error}</p>;
-
   return (
     <div className="room-list">
-      {rooms.map((room) => (
-        <RoomCard key={room.id} room={room} />
-      ))}
+      {loading ? (
+        <p>Loading available rooms...</p>
+      ) : rooms.length > 0 ? (
+        rooms.map((room, index) => <RoomCard key={index} room={room} />)
+      ) : (
+        <p>No available rooms for the selected dates.</p>
+      )}
     </div>
   );
 }

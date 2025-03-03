@@ -1,91 +1,36 @@
-import React from 'react';
-//import RoomCard from '../SelectRoom/RoomCard'; // Import RoomCard component
-import "./accommodation.css";
+import React, { useState, useEffect } from 'react';
 import RoomCard from '../../components/RoomCard/RoomCard';
-import deluxecard1 from '../../assets/deluxecard1.jpg';
-import standardcard1 from '../../assets/standardcard1.jpg';
-import familycard1 from '../../assets/familycard1.jpg';
+import "./accommodation.css";
 
 function Accommodation() {
-  
-  // Sample room data
-  const rooms = [
-    {
-      
-      name: 'Deluxe Suite',
-      description: 'A spacious suite with a king-size bed and a stunning city view.',
-      price: 200,
-      image: deluxecard1,
-      amenities: ['King-size bed', 'Free Wi-Fi', 'Ocean view', 'Mini bar', '24/7 room service'],
-    },
-    {
-      name: 'Standard Room',
-      description: 'A comfortable room with a queen-size bed and basic amenities.',
-      price: 120,
-      image: standardcard1,
-      amenities: ['Queen-size bed', 'Free Wi-Fi', 'TV', 'Mini fridge'],
-    },
-    {
-      name: 'Family Room',
-      description: 'A large room with two double beds, perfect for families.',
-      price: 180,
-      image: familycard1,
-      amenities: ['Two double beds', 'Free Wi-Fi', 'TV', 'Mini fridge', 'Family-friendly'],
-    },
-    {
-        name: 'Deluxe Suite',
-        description: 'A spacious suite with a king-size bed and a stunning city view.',
-        price: 200,
-        image: deluxecard1,
-        amenities: ['King-size bed', 'Free Wi-Fi', 'Ocean view', 'Mini bar', '24/7 room service'],
-      },
-      {
-        name: 'Deluxe Suite',
-        description: 'A spacious suite with a king-size bed and a stunning city view.',
-        price: 200,
-        image: deluxecard1,
-        amenities: ['King-size bed', 'Free Wi-Fi', 'Ocean view', 'Mini bar', '24/7 room service'],
-      },
-      {
-        name: 'Standard Room',
-        description: 'A comfortable room with a queen-size bed and basic amenities.',
-        price: 120,
-        image: standardcard1,
-        amenities: ['Queen-size bed', 'Free Wi-Fi', 'TV', 'Mini fridge'],
-      },
-      {
-        name: 'Family Room',
-        description: 'A large room with two double beds, perfect for families.',
-        price: 180,
-        image: familycard1,
-        amenities: ['Two double beds', 'Free Wi-Fi', 'TV', 'Mini fridge', 'Family-friendly'],
-      },
+  const [rooms, setRooms] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-      {
-        name: 'Family Room',
-        description: 'A large room with two double beds, perfect for families.',
-        price: 180,
-        image: familycard1,
-        amenities: ['Two double beds', 'Free Wi-Fi', 'TV', 'Mini fridge', 'Family-friendly'],
-      },
-      {
-        name: 'Family Room',
-        description: 'A large room with two double beds, perfect for families.',
-        price: 180,
-        image: familycard1,
-        amenities: ['Two double beds', 'Free Wi-Fi', 'TV', 'Mini fridge', 'Family-friendly'],
-      },
- 
-  ];
+  useEffect(() => {
+    fetch('http://localhost:5000/accommodation') // Ensure your backend is running
+      .then(response => response.json())
+      .then(data => {
+        console.log("Fetched Room Data:", data); // Debugging log
+        setRooms(data);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error fetching rooms:", error);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <div className="room-list">
-      {rooms.map((room, index) => (
-        <RoomCard key={index} room={room} />
-      ))}
+      {loading ? (
+        <p>Loading rooms...</p>
+      ) : rooms.length > 0 ? (
+        rooms.map((room, index) => <RoomCard key={index} room={room} />)
+      ) : (
+        <p>No rooms available.</p>
+      )}
     </div>
   );
 }
-
 
 export default Accommodation;
