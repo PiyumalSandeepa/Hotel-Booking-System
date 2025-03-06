@@ -25,7 +25,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Set navbar background color based on the current route
-    if (location.pathname === "/" || location.pathname === "/accommodation" ||location.pathname === "/dining"||location.pathname === "/Wedding"  ||location.pathname === "/location") {
+    if (location.pathname === "/" || location.pathname === "/accommodation" ||location.pathname === "/dining") {
       setBgColor("transparent"); // Transparent for Home & Accommodation
     } else {
       setBgColor("#1a3e6a"); // Default color for other pages
