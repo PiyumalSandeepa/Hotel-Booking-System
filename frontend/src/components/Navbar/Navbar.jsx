@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-//import { Link } from "react-router-dom"; // If you're using React Router
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/logo1.png"; // Replace with your logo path
 
-const Navbar =() => {
+const Navbar = () => {
+  const location = useLocation(); // Get the current route
   const [scrolled, setScrolled] = useState(false);
+  const [bgColor, setBgColor] = useState("transparent");
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -21,8 +23,22 @@ const Navbar =() => {
     };
   }, []);
 
+  useEffect(() => {
+    // Set navbar background color based on the current route
+    if (location.pathname === "/" || location.pathname === "/accommodation" ||location.pathname === "/dining"||location.pathname === "/Wedding"  ||location.pathname === "/location") {
+      setBgColor("transparent"); // Transparent for Home & Accommodation
+    } else {
+      setBgColor("#1a3e6a"); // Default color for other pages
+    }
+  }, [location]);
+
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}    >
+    <nav
+      className={`navbar ${scrolled ? "scrolled" : ""}`}
+      style={{
+        backgroundColor: scrolled ? "#1a3e6a" : bgColor,
+      }}
+    >
       <div className="navbar-logo">
         <img src={logo} alt="The Blue Water" />
       </div>
@@ -36,23 +52,14 @@ const Navbar =() => {
         <li>
           <Link to="/dining">Dining</Link>
         </li>
-        <li>
-          <Link to="#offers">Offers</Link>
-        </li>
-        
-        <li>
-          <Link to="#wedding">Wedding</Link>
-        </li>
-        <li>
-          <Link to="#location">Location</Link>
-        </li>
+       
+      
       </ul>
       <Link to="/book">
         <button className="navbar-bookbtn">BOOK NOW</button>
       </Link>
     </nav>
   );
-}
+};
 
 export default Navbar;
-

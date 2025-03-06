@@ -10,7 +10,7 @@ const BookingConfirm = () => {
 
       <div className="room-details">
         <h3>Deluxe King</h3>
-        <a href="#">Bed and Breakfast - Deluxe</a>
+        
         <div className="checkin-checkout">
           <div>
             <strong>Check In</strong>
@@ -35,7 +35,7 @@ const BookingConfirm = () => {
 
       <div className="newsletter">
         <input type="checkbox" id="subscribe" />
-        <label htmlFor="subscribe">Subscribe to Araliya Beach Resort & Spa Newsletter</label>
+        <label htmlFor="subscribe">Subscribe to Blue Sapphire</label>
       </div>
 
       <h3>Total: <span className="price">LKR 72,000</span></h3>
@@ -50,7 +50,7 @@ const BookingConfirm = () => {
             checked={selectedPayment === "cybersource"}
             onChange={() => setSelectedPayment("cybersource")}
           />
-          <span>CYBER SOURCE</span>
+          <span>Debit Card</span>
           <p>Deposit Required: <strong>LKR 72,000</strong></p>
         </label>
         <label className={`payment-option ${selectedPayment === "amex" ? "selected" : ""}`}>
@@ -61,7 +61,7 @@ const BookingConfirm = () => {
             checked={selectedPayment === "amex"}
             onChange={() => setSelectedPayment("amex")}
           />
-          <span>AMEX IPG</span>
+          <span>Credit Card</span>
         </label>
       </div>
 
