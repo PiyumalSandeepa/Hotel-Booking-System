@@ -56,7 +56,7 @@ const AdminPanel = () => {
 
   return (
     <div className="admin-container">
-      <h1>Hotel Room Management</h1>
+      
       <RoomForm addRoom={addRoom} />
       <RoomList rooms={rooms} updateRoom={updateRoom} deleteRoom={deleteRoom} />
     </div>
