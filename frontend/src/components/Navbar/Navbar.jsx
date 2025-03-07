@@ -39,6 +39,7 @@ const Navbar = () => {
         backgroundColor: scrolled ? "#1a3e6a" : bgColor,
       }}
     >
+      
       <div className="navbar-logo">
         <img src={logo} alt="The Blue Water" />
       </div>
