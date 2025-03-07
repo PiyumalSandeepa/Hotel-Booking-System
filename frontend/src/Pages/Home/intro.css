@@ -67,19 +67,6 @@ body {
     font-weight: 500;
     
   }
-/* .gallerylist{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* Adjust spacing between images 
-  align-items: center;
-}
-.gallerylist img{
-    margin: 180px ,80px,150px,80px; 
-    margin-top: 80px;
-    margin-bottom: 150px;
-    width: 400px;
-    height: 500px;
-  } */
 
 
   .gallerylist {

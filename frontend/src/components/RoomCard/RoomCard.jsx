@@ -1,5 +1,5 @@
 import React from 'react';
-import './roomcard.css'; // Importing CSS for card styling
+import './roomcard.css';
 import { Link } from "react-router-dom";
 
 function RoomCard({ room }) {

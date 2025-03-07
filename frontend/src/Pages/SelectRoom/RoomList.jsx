@@ -10,7 +10,7 @@ function RoomList() {
     const checkIn = localStorage.getItem('checkIn');
     const checkOut = localStorage.getItem('checkOut');
 
-    fetch('http://localhost:5000/available-rooms', { // ✅ Corrected endpoint
+    fetch('http://localhost:5000/available-rooms', { // endpoint
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ check_in: checkIn, check_out: checkOut })

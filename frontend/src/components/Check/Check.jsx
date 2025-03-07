@@ -13,7 +13,7 @@ const Check = () => {
     localStorage.setItem('checkIn', checkIn);
     localStorage.setItem('checkOut', checkOut);
 
-    navigate('/roomlist'); // ✅ Redirect to RoomList
+    navigate('/roomlist'); // Redirect to RoomList
   };
 
   return (

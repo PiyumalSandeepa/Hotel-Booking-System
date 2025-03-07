@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./navbar.css";
-import logo from "../../assets/logo1.png"; // Replace with your logo path
+import logo from "../../assets/logo1.png"; 
 
 const Navbar = () => {
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
   const [scrolled, setScrolled] = useState(false);
   const [bgColor, setBgColor] = useState("transparent");
 
@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    // Set navbar background color based on the current route
+    
     if (location.pathname === "/" || location.pathname === "/accommodation" ||location.pathname === "/dining") {
       setBgColor("transparent"); // Transparent for Home & Accommodation
     } else {

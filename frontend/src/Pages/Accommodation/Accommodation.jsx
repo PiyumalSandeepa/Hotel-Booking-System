@@ -7,10 +7,10 @@ function Accommodation() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/accommodation') // Ensure your backend is running
+    fetch('http://localhost:5000/accommodation') // backend
       .then(response => response.json())
       .then(data => {
-        console.log("Fetched Room Data:", data); // Debugging log
+        console.log("Fetched Room Data:", data); 
         setRooms(data);
         setLoading(false);
       })
