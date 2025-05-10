@@ -44,12 +44,13 @@ const Intro = () => {
           <h1>GALLERY</h1>
         </div>
         <div className="gallerylist">
-          <img src={gallery1} alt="Image of Dining Room"></img>
-          <img src={gallery2} alt="Image of Dining Room"></img>
-          <img src={gallery3} alt="Image of Dining Room"></img>
-          <img src={gallery4} alt="Image of Dining Room"></img>
-          <img src={gallery5} alt="Image of Dining Room"></img>
-          <img src={gallery6} alt="Image of Dining Room"></img>
+          
+          <img src={gallery1} alt="Image of Dining Room" className="hover-image"></img>
+          <img src={gallery2} alt="Image of Dining Room" className="hover-image"></img>
+          <img src={gallery3} alt="Image of Dining Room" className="hover-image"></img>
+          <img src={gallery4} alt="Image of Dining Room" className="hover-image"></img>
+          <img src={gallery5} alt="Image of Dining Room" className="hover-image"></img>
+          <img src={gallery6} alt="Image of Dining Room" className="hover-image"></img>
         </div>
         
 

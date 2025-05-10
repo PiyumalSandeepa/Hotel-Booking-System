@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import Axios for API calls
+import axios from "axios"; 
 
 const RoomForm = () => {
   const [room, setRoom] = useState({
@@ -9,19 +9,19 @@ const RoomForm = () => {
     price: "",
   });
 
-  const [error, setError] = useState(""); // State to store error messages
-  const [successMessage, setSuccessMessage] = useState(""); // State to store success messages
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
 
-  // Handle input changes
+
   const handleChange = (e) => {
     setRoom({ ...room, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
+  //form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Reset error message
-    setSuccessMessage(""); // Reset success message
+    setError(""); 
+    setSuccessMessage(""); 
 
     // Validate form fields
     if (!room.name || !room.image || !room.description || !room.price) {
