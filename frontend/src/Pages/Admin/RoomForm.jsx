@@ -1,102 +1,86 @@
-// import React, { useState } from "react";
-
-// const BookingForm = ({ addBooking }) => {
-//   const [booking, setBooking] = useState({ name: "", room: "", date: "" });
-
-//   const handleChange = (e) => {
-//     setBooking({ ...booking, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (!booking.name || !booking.room || !booking.date) return;
-//     addBooking(booking);
-//     setBooking({ name: "", room: "", date: "" });
-//   };
-
-//   return (
-//     <form className="booking-form" onSubmit={handleSubmit}>
-//       <input type="text" name="name" placeholder="Guest Name" value={booking.name} onChange={handleChange} required />
-//       <input type="number" name="room" placeholder="Room Number" value={booking.room} onChange={handleChange} required />
-//       <input type="date" name="date" value={booking.date} onChange={handleChange} required />
-//       <button type="submit">Add Booking</button>
-//     </form>
-//   );
-// };
-
-// export default BookingForm;
-
-
-
-// import React, { useState } from "react";
-
-// const RoomForm = ({ addRoom }) => {
-//   const [room, setRoom] = useState({ number: "", type: "Standard", price: "", status: "Available" });
-
-//   const handleChange = (e) => {
-//     setRoom({ ...room, [e.target.name]: e.target.value });
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (!room.number || !room.price) return;
-//     addRoom(room);
-//     setRoom({ number: "", type: "Standard", price: "", status: "Available" });
-//   };
-
-//   return (
-//     <form className="room-form" onSubmit={handleSubmit}>
-//       <input type="number" name="number" placeholder="Room Number" value={room.number} onChange={handleChange} required />
-//       <select name="type" value={room.type} onChange={handleChange}>
-//         <option value="Standard">Standard</option>
-//         <option value="Deluxe">Deluxe</option>
-//         <option value="Suite">Suite</option>
-//       </select>
-//       <input type="number" name="price" placeholder="Price per night" value={room.price} onChange={handleChange} required />
-//       <select name="status" value={room.status} onChange={handleChange}>
-//         <option value="Available">Available</option>
-//         <option value="Occupied">Occupied</option>
-//       </select>
-//       <button type="submit">Add Room</button>
-//     </form>
-//   );
-// };
-
-// export default RoomForm;
-
-
-
 import React, { useState } from "react";
+import axios from "axios"; 
 
-const RoomForm = ({ addRoom }) => {
-  const [room, setRoom] = useState({ number: "", type: "Standard", price: "", status: "Available" });
+const RoomForm = () => {
+  const [room, setRoom] = useState({
+    name: "",
+    image: "",
+    description: "",
+    price: "",
+  });
+
+  const [error, setError] = useState(""); 
+  const [successMessage, setSuccessMessage] = useState(""); 
+
 
   const handleChange = (e) => {
     setRoom({ ...room, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  //form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!room.number || !room.price) return;
-    addRoom(room);
-    setRoom({ number: "", type: "Standard", price: "", status: "Available" });
+    setError(""); 
+    setSuccessMessage(""); 
+
+    // Validate form fields
+    if (!room.name || !room.image || !room.description || !room.price) {
+      setError("All fields are required.");
+      return;
+    }
+
+    try {
+      // Send POST request to the backend to add a room
+      const response = await axios.post("http://localhost:5000/admin/add-room", room);
+      setSuccessMessage(response.data.message); // Display success message
+      setRoom({ name: "", image: "", description: "", price: "" }); // Reset form fields
+    } catch (err) {
+      console.error("Error adding room:", err);
+      setError("Failed to add the room. Please try again.");
+    }
   };
 
   return (
-    <form className="room-form" onSubmit={handleSubmit}>
-      <input type="number" name="number" placeholder="Room Number" value={room.number} onChange={handleChange} required />
-      <select name="type" value={room.type} onChange={handleChange}>
-        <option value="Standard">Standard</option>
-        <option value="Deluxe">Deluxe</option>
-        <option value="Suite">Suite</option>
-      </select>
-      <input type="number" name="price" placeholder="Price per night" value={room.price} onChange={handleChange} required />
-      <select name="status" value={room.status} onChange={handleChange}>
-        <option value="Available">Available</option>
-        <option value="Occupied">Occupied</option>
-      </select>
-      <button type="submit">Add Room</button>
-    </form>
+    <div className="room-form-container">
+      <h2>Hotel Room Management</h2>
+      {error && <p className="error-message">{error}</p>} {/* Display error message */}
+      {successMessage && <p className="success-message">{successMessage}</p>} {/* Display success message */}
+      
+      <form className="room-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Room Name"
+          value={room.name}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="image"
+          placeholder="Image URL"
+          value={room.image}
+          onChange={handleChange}
+          required
+        />
+        <textarea
+          name="description"
+          placeholder="Description"
+          value={room.description}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="number"
+          name="price"
+          placeholder="Price"
+          value={room.price}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Add Room</button>
+      </form>
+    </div>
   );
 };
 

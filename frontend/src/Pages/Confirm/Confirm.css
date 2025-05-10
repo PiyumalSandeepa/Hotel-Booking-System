@@ -1,6 +1,6 @@
 .booking-container-confirm {
-    max-width: 400px;
-    margin: auto;
+    max-width: 800px;
+    margin: 100px auto 20px; 
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -72,7 +72,7 @@
   
   .pay-now {
     width: 100%;
-    background: green;
+    background: #33b5e1;
     color: white;
     padding: 10px;
     border: none;
@@ -82,6 +82,6 @@
   }
   
   .pay-now:hover {
-    background: darkgreen;
+    background: #1c78b9;
   }
   

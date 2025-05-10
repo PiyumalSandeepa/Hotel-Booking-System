@@ -10,7 +10,7 @@ const BookingConfirm = () => {
 
       <div className="room-details">
         <h3>Deluxe King</h3>
-        <a href="#">Bed and Breakfast - Deluxe</a>
+        
         <div className="checkin-checkout">
           <div>
             <strong>Check In</strong>
@@ -22,8 +22,8 @@ const BookingConfirm = () => {
           </div>
           <div className="guests">👤 2</div>
         </div>
-        <p>Room X 1 <span className="price">LKR 72,000</span></p>
-        <p className="subtotal">Sub Total: <span className="price">LKR 72,000</span></p>
+        <p>Room X 1 <span className="price">$130.49</span></p>
+        <p className="subtotal">Sub Total: <span className="price">$130.49</span></p>
       </div>
 
       <div className="terms">
@@ -35,10 +35,10 @@ const BookingConfirm = () => {
 
       <div className="newsletter">
         <input type="checkbox" id="subscribe" />
-        <label htmlFor="subscribe">Subscribe to Araliya Beach Resort & Spa Newsletter</label>
+        <label htmlFor="subscribe">Subscribe to Blue Sapphire</label>
       </div>
 
-      <h3>Total: <span className="price">LKR 72,000</span></h3>
+      <h3>Total: <span className="price">$130.49</span></h3>
 
       <h3>Payment Options</h3>
       <div className="payment-options">
@@ -50,8 +50,8 @@ const BookingConfirm = () => {
             checked={selectedPayment === "cybersource"}
             onChange={() => setSelectedPayment("cybersource")}
           />
-          <span>CYBER SOURCE</span>
-          <p>Deposit Required: <strong>LKR 72,000</strong></p>
+          <span>Debit Card</span>
+          <p>Deposit Required: <strong>$130.49</strong></p>
         </label>
         <label className={`payment-option ${selectedPayment === "amex" ? "selected" : ""}`}>
           <input
@@ -61,7 +61,7 @@ const BookingConfirm = () => {
             checked={selectedPayment === "amex"}
             onChange={() => setSelectedPayment("amex")}
           />
-          <span>AMEX IPG</span>
+          <span>Credit Card</span>
         </label>
       </div>
 

@@ -10,11 +10,14 @@ import Dining from './Pages/Dining/Dining';
 import BookingForm from './Pages/Reserve/Reserve';
 import BookingConfirm from './Pages/Confirm/Confirm';
 import AdminPanel from './Pages/Admin/Admin';
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => (
   <Router>
+    <ScrollToTop />
     <Navbar />
     <Routes>
+
       <Route path="/" element={<Home />} />
       <Route path="/book" element={<Book />} />
       <Route path="/roomlist" element={<RoomList />} />

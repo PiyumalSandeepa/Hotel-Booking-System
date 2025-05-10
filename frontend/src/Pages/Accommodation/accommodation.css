@@ -3,20 +3,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
     gap: 20px; /* Space between the cards */
-    padding-left: 10%; /* Optional: Adds some padding around the grid */
+    padding-left: 10%; 
     padding-right: 10%;
     padding-bottom: 10%;
   }
   
   @media (max-width: 1200px) {
     .room-list {
-      grid-template-columns: repeat(3, 1fr); /* 3 cards per row for medium-sized screens */
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row  */
     }
   }
   
   @media (max-width: 900px) {
     .room-list {
-      grid-template-columns: repeat(2, 1fr); /* 2 cards per row for smaller screens */
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
     }
   }
   
@@ -25,13 +25,3 @@
       grid-template-columns: 1fr; /* 1 card per row for mobile screens */
     }
   }
-
-   
-.hero{
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(rgba(79, 68, 150, 0.7),rgba(4, 3, 12, 0.7)), url('../../assets/hero.jpg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-}

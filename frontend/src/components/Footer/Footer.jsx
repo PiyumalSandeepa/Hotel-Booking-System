@@ -17,19 +17,20 @@ function Footer() {
         <div className="footer-section">
           <ul>
             <li><Link to="/">HOME</Link></li>
-            <li><Link to="/experiences">EXPERIENCES</Link></li>
-            <li><Link to="/weddings">WEDDINGS</Link></li>
+            
+            
             <li><Link to="/gallery">GALLERY</Link></li>
             <li><Link to="/contact">CONTACT US</Link></li>
+            <li><Link to="/dining">DINING</Link></li>
+            <li><Link to="/about">ABOUT</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <ul>
             
-            <li><Link to="/offers">OFFERS</Link></li>
-            <li><Link to="/meetings">MEETINGS & CONFERENCES</Link></li>
-            <li><Link to="/about">ABOUT</Link></li>
+            
+           
             
           </ul>
         </div>
