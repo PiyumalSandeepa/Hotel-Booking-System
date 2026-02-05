@@ -1,39 +1,43 @@
-const express = require('express');
-const mysql = require('mysql2');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
-app.use(cors());
 
-// MySQL Database Connection
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: '@',  // Replace with your MySQL username
-  password: 'YES',  // Replace with your MySQL password
-  database: 'db_hotel'
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// 🔥 MongoDB Connection
+require("./db");
+
+// 🔥 Import Room Model
+const Room = require("./models/Room");
+
+// =====================
+// ROUTES
+// =====================
+
+// Test route (optional but useful)
+app.get("/", (req, res) => {
+  res.send("Hotel Booking Backend is running 🚀");
 });
 
-db.connect((err) => {
-  if (err) {
-    console.error('Database connection failed:', err);
-  } else {
-    console.log('Connected to MySQL database');
+// Get all rooms
+app.get("/roomlist", async (req, res) => {
+  try {
+    const rooms = await Room.find({});
+    res.json(rooms);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Failed to fetch rooms" });
   }
 });
 
-// API Endpoint to Fetch Rooms
-app.get('/roomlist', (req, res) => {
-  const query = 'SELECT * FROM rooms';
-  db.query(query, (err, results) => {
-    if (err) {
-      res.status(500).json({ error: 'Failed to fetch rooms' });
-    } else {
-      res.json(results);
-    }
-  });
-});
+// =====================
+// START SERVER
+// =====================
+const PORT = 5000;
 
-// Start Server
-app.listen(5000, () => {
-  console.log('Server is running on port 5000');
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
