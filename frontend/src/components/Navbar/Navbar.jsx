@@ -6,6 +6,12 @@ import logo from "../../assets/logo1.png"; // Replace with your logo path
 
 const Navbar =() => {
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  // Pages that need highlighted navbar
+  const highlightedPages = ["/admin", "/login", "/accommodation", "/dining", "/book", "/reserve", "/confirm", "/roomlist"];
+  const shouldHighlight = highlightedPages.includes(location.pathname);
+
   const handleScroll = () => {
     if (window.scrollY > 50) {
       setScrolled(true);
@@ -22,7 +28,7 @@ const Navbar =() => {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}    >
+    <nav className={`navbar ${scrolled ? "scrolled" : ""} ${shouldHighlight ? "highlighted" : ""}`}>
       <div className="navbar-logo">
         <img src={logo} alt="The Blue Water" />
       </div>
@@ -45,6 +51,9 @@ const Navbar =() => {
         </li>
         <li>
           <Link to="#location">Location</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
       <Link to="/book">

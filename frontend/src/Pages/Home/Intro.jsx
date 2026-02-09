@@ -6,6 +6,8 @@ import gallery1 from "../../assets/gallery1.jpg";
 import gallery2 from "../../assets/gallery2.jpg";
 import gallery3 from "../../assets/gallery3.jpg";
 import gallery4 from "../../assets/gallery4.jpg";
+import gallery5 from "../../assets/gallery5.jpg";
+import gallery6 from "../../assets/gallery6.jpg";
 
 const Intro = () => {
   return (
@@ -46,6 +48,8 @@ const Intro = () => {
           <img src={gallery2} alt="Image of Dining Room"></img>
           <img src={gallery3} alt="Image of Dining Room"></img>
           <img src={gallery4} alt="Image of Dining Room"></img>
+          <img src={gallery5} alt="Image of Dining Room"></img>
+          <img src={gallery6} alt="Image of Dining Room"></img>
         </div>
         
 

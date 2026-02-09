@@ -10,12 +10,14 @@ import Dining from './Pages/Dining/Dining';
 import BookingForm from './Pages/Reserve/Reserve';
 import BookingConfirm from './Pages/Confirm/Confirm';
 import AdminPanel from './Pages/Admin/Admin';
+import Login from './Pages/Login/Login';
 
 const App = () => (
   <Router>
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/book" element={<Book />} />
       <Route path="/roomlist" element={<RoomList />} />
       <Route path="/accommodation" element={<Accommodation />} />

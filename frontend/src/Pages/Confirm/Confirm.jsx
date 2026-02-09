@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './confirm.css';
+
 const BookingConfirm = () => {
   const [selectedPayment, setSelectedPayment] = useState("cybersource");
 
